@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    border-radius: 0 !important;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #131313;
+    color: #e8e6e3;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar — carbon track */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0e0e0e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #353534;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e4002b;
+  }
+}
+
+@layer components {
+  /* Telemetry label — all-caps racing readout */
+  .label-telemetry {
+    @apply font-body text-xs font-medium uppercase tracking-telemetry text-on-surface-variant;
+  }
+
+  /* Display headline — Space Grotesk bold italic */
+  .headline-display {
+    @apply font-display font-bold italic tracking-display text-on-surface;
+  }
+
+  /* Primary CTA — Ignition button */
+  .btn-ignition {
+    @apply bg-primary-container text-on-primary font-body font-semibold px-8 py-3
+           uppercase tracking-telemetry text-sm
+           transition-colors duration-200 ease-in
+           hover:bg-primary hover:text-surface;
+  }
+
+  /* Ghost CTA — underline only */
+  .btn-ghost {
+    @apply bg-transparent text-on-surface font-body font-medium px-4 py-3
+           uppercase tracking-telemetry text-sm
+           border-b-2 border-primary-container
+           transition-colors duration-200 ease-in
+           hover:text-primary-container;
+  }
+
+  /* Tonal card surface */
+  .card-machined {
+    @apply bg-surface-high;
+    box-shadow: 0 4px 0 0 #0e0e0e;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    background: rgba(60, 59, 59, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
